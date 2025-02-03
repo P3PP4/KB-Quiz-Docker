@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: UserService
+  profiles:
+    active: mysql
+  jpa:
+    database: mysql
+    datasource:
+      url: jdbc:mysql://mysql:3306/userdb # mysql -> mysql_db로 변경
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      hikari:
+        username: root
+        password: rootpassword
+        maximum-pool-size: 10
+        minimum-idle: 5
+        connection-timeout: 30000 # 30초
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+
+server:
+  port: 8081
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://api-gateway:8761/eureka

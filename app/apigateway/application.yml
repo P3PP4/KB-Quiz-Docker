@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: APIGateway
+  cloud:
+    gateway:
+      routes:
+        - id: UserService
+          uri: lb://UserService
+          predicates:
+            - Path=/user/**
+        - id: QuizService
+          uri: lb://QuizService
+          predicates:
+            - Path=/quiz/**
+      discovery:
+        enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+server:
+  port: 9000
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://service-discovery:8761/eureka

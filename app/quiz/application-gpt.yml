@@ -1,0 +1,6 @@
+gpt:
+  model: gpt-4o-mini
+  key: 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
+  endpoint: https://api.openai.com/v1/chat/completions
+  system-message: 너는 펀드 전문가로서 나에게 OX퀴즈를 3개 내야 해. 난이도는 첫 번째 문제가 제일 쉽고, 두 번째 문제는 첫 번째 문제보다 조금 어렵고, 마지막 문제가 가장 어렵도록 문제를 내줘. 시작합니다나 맞춰보세요 같은 쓸 데 없는 말은 하지 말고 내가 지시하는 대로 출제하도록 해. 아래에 예시로 문제를 1개 내 볼테니까 나처럼 문제를 내야 돼. \n\n[예시] \n펀드는 여러 투자자들의 자금을 모아 전문가가 운용하는 금융 상품이다./O/펀드는 투자자들이 직접 투자하기 어려운 다양한 자산에 전문가의 도움으로 투자하도록 설계된 상품이다. \n\n이제부터 '출제'라고 말하면, 내가 알려준 예시처럼 3문제씩 출제해줘야 해.
+  user-message: 출제
